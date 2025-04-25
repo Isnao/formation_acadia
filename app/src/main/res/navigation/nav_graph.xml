@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SessionFragment">
+
+    <fragment
+        android:id="@+id/SessionFragment"
+        android:name="isnao.acadiaformation.SessionFragment"
+        android:label="@string/session"
+        tools:layout="@layout/fragment_session">
+
+        <action
+            android:id="@+id/action_SessionFragment_to_BilanFragment"
+            app:destination="@id/BilanFragment" />
+
+        <action
+            android:id="@+id/action_BilanFragment_to_SessionFragment"
+            app:destination="@id/SessionFragment" />
+
+        <action
+            android:id="@+id/action_SessionListFragment_to_SessionFragment"
+            app:destination="@id/SessionFragment" />
+
+        <action
+            android:id="@+id/action_to_SessionListFragment"
+            app:destination="@id/SessionListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/BilanFragment"
+        android:name="isnao.acadiaformation.BilanFragment"
+        android:label="@string/bilan"
+        tools:layout="@layout/fragment_bilan">
+
+        <action
+            android:id="@+id/action_BilanFragment_to_SessionFragment"
+            app:destination="@id/SessionFragment" />
+
+        <action
+            android:id="@+id/action_SessionFragment_to_BilanFragment"
+            app:destination="@id/BilanFragment" />
+
+        <action
+            android:id="@+id/action_SessionListFragment_to_BilanFragment"
+            app:destination="@id/BilanFragment" />
+
+        <action
+            android:id="@+id/action_to_SessionListFragment"
+            app:destination="@id/SessionListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SessionListFragment"
+        android:name="isnao.acadiaformation.SessionListFragment"
+        android:label="Liste des Sessions"
+        tools:layout="@layout/fragment_session_list">
+
+        <action
+            android:id="@+id/action_SessionListFragment_to_SessionFragment"
+            app:destination="@id/SessionFragment" />
+
+        <action
+            android:id="@+id/action_SessionListFragment_to_BilanFragment"
+            app:destination="@id/BilanFragment" />
+
+        <action
+            android:id="@+id/action_to_SessionListFragment"
+            app:destination="@id/SessionListFragment" />
+    </fragment>
+</navigation>

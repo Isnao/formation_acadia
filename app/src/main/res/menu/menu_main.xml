@@ -1,0 +1,94 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="isnao.acadiaformation.MainActivity">
+    <item
+        android:id="@+id/action_fragments"
+        android:orderInCategory="100"
+        android:title="Pages"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_bilan"
+                android:orderInCategory="100"
+                android:title="@string/bilan_progres"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_session"
+                android:orderInCategory="200"
+                android:title="@string/session_menu"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+    <item
+        android:orderInCategory="200"
+        android:title="@string/blank"
+        android:enabled="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_csv"
+        android:orderInCategory="300"
+        android:title="Export CSV"
+        app:showAsAction="never" >
+        <menu>
+            <item
+                android:id="@+id/action_session_csv"
+                android:orderInCategory="100"
+                android:title="@string/session_menu"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_bilan_csv"
+                android:orderInCategory="200"
+                android:title="@string/bilan_progres"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+    <item
+        android:orderInCategory="400"
+        android:title="@string/blank"
+        android:enabled="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_import"
+        android:orderInCategory="500"
+        android:title="Import"
+        app:showAsAction="never" >
+        <menu>
+            <item
+                android:id="@+id/action_session_import"
+                android:orderInCategory="100"
+                android:title="@string/session_menu"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_bilan_import"
+                android:orderInCategory="200"
+                android:title="@string/bilan_progres"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+    <item
+        android:orderInCategory="600"
+        android:title="@string/blank"
+        android:enabled="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_session_list"
+        android:orderInCategory="700"
+        android:title="Liste des Sessions"
+        app:showAsAction="never" />
+    <item
+        android:orderInCategory="800"
+        android:title="@string/blank"
+        android:enabled="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_clean"
+        android:orderInCategory="900"
+        android:title="@string/action_clean"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_more"
+        android:orderInCategory="1000"
+        android:title="@string/action_more"
+        app:showAsAction="never" />
+</menu>

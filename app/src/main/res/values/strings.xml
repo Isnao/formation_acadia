@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">AcadiaFormation</string>
+    <string name="action_clean">Vider les données</string>
+
+    <string name="session">Session de formation</string>
+    <string name="bilan">Bilan de compétences</string>
+    <string name="description">Add a reminder</string>
+    <string name="button_reminder">Add reminder</string>
+    <string name="formation">Formation</string>
+    <string name="channel_name">Notifications Dressage</string>
+    <string name="channel_description">Notifications programmées en journée pour réaliser 15 à 30 minutes de dressage</string>
+    <string name="objectif_atteint">Objectif Atteint</string>
+    <string name="remarques">Remarques détaillées</string>
+    <string name="timing">10</string>
+    <string name="duree">Durée de séance</string>
+    <string name="objectif_hint">2 pattes sur la plateforme</string>
+    <string name="objectif">Objectif de séance</string>
+    <string name="comportement">Comportement</string>
+    <string name="save">Enregistrer</string>
+    <string name="blank" />
+    <string name="bilan_progres">Bilan</string>
+    <string name="session_menu">Session</string>
+    <string name="action_session">Obtenir Session CSV</string>
+    <string name="action_bilan">Obtenir Bilan CSV</string>
+    <string name="action_list">Gérer la liste de comportements</string>
+    <string name="date">Date</string>
+    <string name="action_more">Plus d\'informations</string>
+    <string-array name="niveaux">
+        <item>Niveau 1</item>
+        <item>Niveau 2</item>
+        <item>Niveau 3</item>
+    </string-array>
+</resources>
