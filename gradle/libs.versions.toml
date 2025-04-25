@@ -1,0 +1,58 @@
+[versions]
+advancedSpinner = "v1.0"
+agp = "8.5.1"
+hiltAndroid = "2.44"
+hiltAndroidVersion = "2.49"
+hiltNavigationCompose = "1.2.0"
+hiltNavigationComposeVersion = "1.1.0-alpha01"
+kotlin = "1.9.0"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+constraintlayout = "2.1.4"
+materialMultiselectionSpinner = "Tag"
+multiSelectionSpinnerAndroid = "1.0"
+multiselectspinner = "1.0.1"
+navigationFragmentKtx = "2.8.2"
+navigationUiKtx = "2.8.2"
+roomCompiler = "2.6.1"
+roomCompilerVersion = "2.5.2"
+runtimeAndroid = "1.7.4"
+
+[libraries]
+advanced-spinner = { module = "com.github.Liocoder24x7:Advanced-Spinner", version.ref = "advancedSpinner" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+androidx-hilt-navigation-compose-v110alpha01 = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationComposeVersion" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
+androidx-room-compiler-v252 = { module = "androidx.room:room-compiler", version.ref = "roomCompilerVersion" }
+androidx-room-guava = { module = "androidx.room:room-guava", version.ref = "roomCompiler" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomCompiler" }
+androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "roomCompiler" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomCompiler" }
+androidx-room-rxjava2 = { module = "androidx.room:room-rxjava2", version.ref = "roomCompiler" }
+androidx-room-rxjava3 = { module = "androidx.room:room-rxjava3", version.ref = "roomCompiler" }
+androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "roomCompiler" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
+hilt-android-v249 = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidVersion" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
+material-multiselection-spinner = { module = "com.github.zeeshan5422:Material-MultiSelection-Spinner", version.ref = "materialMultiselectionSpinner" }
+multi-selection-spinner-android = { module = "com.github.AnuraganuPunalur:Multi-Selection-Spinner-Android", version.ref = "multiSelectionSpinnerAndroid" }
+multiselectspinner = { module = "com.github.pratikbutani:MultiSelectSpinner", version.ref = "multiselectspinner" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
