@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
-            android:text="v 1.5"
+            android:text="@string/version"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />

@@ -86,7 +86,7 @@ class BilanFragment : Fragment() {
             object : TabLayout.OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     val correctLine =
-                        sessionViewModel.progress.find { elem ->
+                        sessionViewModel.progressMap.values.find { elem ->
                             elem.contains(tab?.text)
                         }
                     val bilanBinding = BilanTabItemBinding.inflate(layoutInflater)
@@ -257,45 +257,64 @@ class BilanFragment : Fragment() {
     private fun writeLocally() {
         val file = File(activity?.applicationContext?.filesDir ?: binding.root.context.filesDir, "bilan_progres.csv")
         file.writeText(";Capture/Façonnage;Signal;Durée;Position;Distance;Distraction;Généralisation;Maîtrise\n")
-        sessionViewModel.progress.forEach { lines ->
-            file.appendText("${lines.joinToString(";")}\n")
+//        sessionViewModel.progress.forEach { lines ->
+//            file.appendText("${lines.joinToString(";")}\n")
+//        }
+        sessionViewModel.progressMap.values.forEach { line ->
+            file.appendText("${line.joinToString(";")}\n")
         }
     }
 
     private fun getLocal() {
         val file = File(activity?.applicationContext?.filesDir ?: binding.root.context.filesDir, "bilan_progres.csv")
         if (!file.exists()) {
-            val list = intArrayOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+//            val list = intArrayOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
             val ressourceArray =
                 MainActivity.Niveau.niveau1
                     .plus(MainActivity.Niveau.niveau2)
                     .plus(MainActivity.Niveau.niveau3)
-            sessionViewModel.progress =
-                Array<Array<String>>(
-                    22,
-                    fun (index: Int): Array<String> =
-                        Array<String>(
-                            9,
-                            fun (subIndex: Int): String =
-                                if (subIndex == 0) {
-                                    ressourceArray[index]
-                                } else {
-                                    ""
-                                },
-                        ),
-                )
-            list.forEachIndexed { index, _ ->
-                sessionViewModel.progress[index] = arrayOf(ressourceArray[index], "", "", "", "", "", "", "", "")
+//            sessionViewModel.progress =
+//                Array<Array<String>>(
+//                    22,
+//                    fun (index: Int): Array<String> =
+//                        Array<String>(
+//                            9,
+//                            fun (subIndex: Int): String =
+//                                if (subIndex == 0) {
+//                                    ressourceArray[index]
+//                                } else {
+//                                    ""
+//                                },
+//                        ),
+//                )
+//            list.forEachIndexed { index, _ ->
+//                sessionViewModel.progress[index] = arrayOf(ressourceArray[index], "", "", "", "", "", "", "", "")
+//            }
+            ressourceArray.forEachIndexed { index, elem ->
+                sessionViewModel.progressMap[index] = mutableListOf(ressourceArray[index], "", "", "", "", "", "", "", "")
             }
             writeLocally()
         } else {
             val lines = file.readText().split("\n")
 
-            sessionViewModel.progress =
-                Array<Array<String>>(21, fun (_: Int): Array<String> = Array<String>(9, fun (_: Int): String = ""))
+//            sessionViewModel.progress =
+//                Array<Array<String>>(21, fun (_: Int): Array<String> = Array<String>(9, fun (_: Int): String = ""))
             lines.forEachIndexed { index, s ->
-                if (index != 0 && index <= 21) {
-                    sessionViewModel.progress[index - 1] = s.split(';').toTypedArray()
+                if (index != 0) {
+                    sessionViewModel.progressMap[index - 1] = s.split(';').toMutableList()
+                }
+            }
+
+            val ressourceArray =
+                MainActivity.Niveau.niveau1
+                    .plus(MainActivity.Niveau.niveau2)
+                    .plus(MainActivity.Niveau.niveau3)
+
+            ressourceArray.forEachIndexed { index, s ->
+                if (sessionViewModel.progressMap[index].isNullOrEmpty() ||
+                    (sessionViewModel.progressMap[index]?.size ?: 1) < 2
+                ) {
+                    sessionViewModel.progressMap[index] = mutableListOf(ressourceArray[index], "", "", "", "", "", "", "", "")
                 }
             }
         }
