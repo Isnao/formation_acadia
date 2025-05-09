@@ -25,7 +25,9 @@ class SessionItem(
 
 class SessionViewModel : ViewModel() {
     private var list: MutableList<SessionItem> = ArrayList()
-    lateinit var progress: Array<Array<String>>
+
+//    lateinit var progress: Array<Array<String>>
+    var progressMap: MutableMap<Int, MutableList<String>> = mutableMapOf()
 
     @SuppressLint("SimpleDateFormat")
     fun addSession(item: SessionItem) {

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AcadiaFormation</string>
     <string name="action_clean">Vider les données</string>
+    <string name="version">V 1.9</string>
 
     <string name="session">Session de formation</string>
     <string name="bilan">Bilan de compétences</string>
